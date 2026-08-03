@@ -1,0 +1,5 @@
+interface:
+  display_name: "Backend System Generator"
+  short_description: "生成含专业图表、日历与洞察模块的成熟高密度 SaaS 后台系统"
+  brand_color: "#3E5ABD"
+  default_prompt: "使用 $backend-system-generator，以 Plus Jakarta Sans 和统一主蓝渐变生成一套默认浅色、仅按明确需求切换深色，并包含专业数据图表的成熟 SaaS 后台。"
