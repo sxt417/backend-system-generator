@@ -5,7 +5,7 @@ description: 生成、改造或审核成熟的 SaaS 与数据后台系统，适�
 
 # Backend System Generator
 
-把参考图的视觉语言转译为可执行的后台设计系统。始终追求“高信息密度，零视觉恐慌”，并让所有页面像同一个成熟产品，而不是一组互不相关的 Demo。每次生成只采用一个全局主题。
+把成熟后台的视觉语言转译为可执行的设计系统。始终追求“高信息密度，零视觉恐慌”，并让所有页面像同一个成熟产品，而不是一组互不相关的 Demo。每次生成只采用一个全局主题。
 
 ## 启动必读
 
@@ -15,8 +15,7 @@ description: 生成、改造或审核成熟的 SaaS 与数据后台系统，适�
 2. 根据页面类型读取 [references/page-templates.md](references/page-templates.md)，选用且保持模板骨架。
 3. 页面包含图表、日历、时间线、容量进度或数据洞察时，完整读取 [references/chart-design-system.md](references/chart-design-system.md)，先选择表达方式再实现。
 4. 交付前完整读取 [references/qa-checklist.md](references/qa-checklist.md)，逐项验收。
-5. 需要核对原始气质时，查看 [assets/reference.webp](assets/reference.webp)；需要核对主蓝渐变与 Plus Jakarta Sans 字体时，查看 [assets/theme-references](assets/theme-references)；需要核对图表风格时，查看 [assets/chart-references](assets/chart-references)。
-6. 需要落地前端时，复用 [assets/calm-admin-tokens.css](assets/calm-admin-tokens.css)，不要重新发明另一套变量。
+5. 需要落地前端时，复用 [assets/calm-admin-tokens.css](assets/calm-admin-tokens.css)，不要重新发明另一套变量。
 
 ## 核心原则
 
