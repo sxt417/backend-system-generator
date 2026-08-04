@@ -1,6 +1,6 @@
 # Backend System Generator
 
-用于生成、改造和审核成熟 SaaS 与数据后台系统的 Codex Skill。
+用于生成、改造和审核成熟 SaaS 与数据后台系统的 Agent Skill，可安装到 Codex 和 Claude Code。
 
 它面向经营仪表盘、数据分析、内容管理、用户与权限、订单与资源、任务队列、排期日历、人员管理和配置中心等场景，目标是建立一套“高信息密度、低视觉焦虑、多页面一致”的后台设计语言。
 
@@ -37,16 +37,71 @@
 
 ## 安装
 
-将仓库克隆到 Codex skills 目录：
+这个仓库使用标准 `SKILL.md` + 支持文件结构，可同时被 Codex 和 Claude Code 使用。推荐先克隆仓库，再运行安装脚本；脚本只复制运行时需要的文件，不会把 README 和预览图片塞进 skills 目录。
+
+### 推荐：安装脚本
 
 ```bash
-git clone https://github.com/sxt417/backend-system-generator.git \
-  ~/.codex/skills/backend-system-generator
+git clone https://github.com/sxt417/backend-system-generator.git
+cd backend-system-generator
 ```
 
-仓库为公开仓库，可以直接克隆；如需向仓库推送修改，仍需使用有写入权限的 GitHub 账号完成认证。
+只安装到 Codex：
 
-安装完成后，重新打开 Codex 会话或刷新 skills 列表。
+```bash
+./install.sh codex
+```
+
+只安装到 Claude Code：
+
+```bash
+./install.sh claude
+```
+
+同时安装到 Codex 和 Claude Code：
+
+```bash
+./install.sh all
+```
+
+安装为某个项目专用的 Claude Code skill：
+
+```bash
+./install.sh claude-project /path/to/project
+```
+
+### 默认安装位置
+
+| 客户端 | 作用域 | 安装位置 | 调用方式 |
+|---|---|---|---|
+| Codex | 个人 | `~/.codex/skills/backend-system-generator/` | `$backend-system-generator` |
+| Claude Code | 个人 | `~/.claude/skills/backend-system-generator/` | `/backend-system-generator` |
+| Claude Code | 项目 | `<project>/.claude/skills/backend-system-generator/` | `/backend-system-generator` |
+
+Claude Code 的个人和项目级目录遵循 [Anthropic 官方 Skills 文档](https://code.claude.com/docs/en/skills)。
+
+### 更新已有安装
+
+先更新仓库，再使用 `--force` 重新安装：
+
+```bash
+git pull
+./install.sh all --force
+```
+
+`--force` 不会直接删除旧版本；脚本会先把原安装移动到带时间戳的备份目录，再安装新版本。
+
+如需自定义 skills 根目录，可以设置 `CODEX_SKILLS_DIR` 或 `CLAUDE_SKILLS_DIR`：
+
+```bash
+CLAUDE_SKILLS_DIR=/custom/claude/skills ./install.sh claude
+```
+
+### 验证安装
+
+- Codex：开始一个新任务并输入 `$backend-system-generator`。
+- Claude Code：运行 `/skills` 确认可用，再输入 `/backend-system-generator`。
+- Claude Code 通常会实时检测 skill 变更；如果会话启动时顶层 skills 目录尚不存在，请重启 Claude Code。
 
 ## 使用方式
 
@@ -54,6 +109,12 @@ git clone https://github.com/sxt417/backend-system-generator.git \
 
 ```text
 $backend-system-generator 帮我设计一个内容运营数据后台，包含 KPI、趋势图、任务队列和风险提醒。
+```
+
+在 Claude Code 中直接调用：
+
+```text
+/backend-system-generator 帮我设计一个内容运营数据后台，包含 KPI、趋势图、任务队列和风险提醒。
 ```
 
 也可以使用自然语言触发，例如：
@@ -81,6 +142,7 @@ $backend-system-generator 帮我设计一个内容运营数据后台，包含 KP
 backend-system-generator/
 ├── SKILL.md
 ├── README.md
+├── install.sh
 ├── agents/
 │   └── openai.yaml
 ├── assets/
@@ -99,6 +161,7 @@ backend-system-generator/
 ## 文件说明
 
 - `SKILL.md`：触发范围、核心原则、工作流与交付要求。
+- `install.sh`：安装到 Codex、Claude Code 或 Claude Code 项目目录的安全安装器。
 - `references/design-system.md`：颜色、字体、布局、组件和交互规范。
 - `references/page-templates.md`：常见后台页面的稳定骨架。
 - `references/chart-design-system.md`：业务问题到图表类型与编码方式的选择规则。
