@@ -4,6 +4,28 @@
 
 它面向经营仪表盘、数据分析、内容管理、用户与权限、订单与资源、任务队列、排期日历、人员管理和配置中心等场景，目标是建立一套“高信息密度、低视觉焦虑、多页面一致”的后台设计语言。
 
+## 示例预览
+
+以下图片用于测试和展示 skill 的默认浅色主题。界面品牌、人物、业务对象和指标均为模拟内容，不对应真实系统或真实个人。
+
+### 经营总览
+
+![经营总览测试图](examples/operations-overview.png)
+
+经营总览模板：四项 KPI、月度比较图、环形 KPI、AI 洞察和容量排名。
+
+### 高密度任务队列
+
+![高密度任务队列测试图](examples/review-queue.png)
+
+高密度队列模板：筛选工具条、可扫读表格、语义状态、负荷趋势、处理时间线和 AI 例外建议。
+
+### 时间调度
+
+![时间调度测试图](examples/scheduling.png)
+
+时间调度模板：日时间线、资源轨道、月历、汇总指标、可预订时段和冲突提示。
+
 ## 能做什么
 
 - 新建或重构 Dashboard、Detail、Scheduling、Queue、Resource、Analytics、Settings 等后台页面。
@@ -58,10 +80,15 @@ $backend-system-generator 帮我设计一个内容运营数据后台，包含 KP
 ```text
 backend-system-generator/
 ├── SKILL.md
+├── README.md
 ├── agents/
 │   └── openai.yaml
 ├── assets/
 │   └── calm-admin-tokens.css
+├── examples/
+│   ├── operations-overview.png
+│   ├── review-queue.png
+│   └── scheduling.png
 └── references/
     ├── chart-design-system.md
     ├── design-system.md
@@ -77,6 +104,7 @@ backend-system-generator/
 - `references/chart-design-system.md`：业务问题到图表类型与编码方式的选择规则。
 - `references/qa-checklist.md`：交付前的响应式、可访问性和视觉一致性检查。
 - `assets/calm-admin-tokens.css`：可直接复用的语义化设计 Token。
+- `examples/`：用于 GitHub 预览和人工验收的模拟界面测试图。
 
 ## 设计原则
 
