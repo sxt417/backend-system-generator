@@ -44,7 +44,7 @@ git clone https://github.com/sxt417/backend-system-generator.git \
   ~/.codex/skills/backend-system-generator
 ```
 
-仓库当前为私有仓库，克隆前需要使用有权限的 GitHub 账号完成认证。
+仓库为公开仓库，可以直接克隆；如需向仓库推送修改，仍需使用有写入权限的 GitHub 账号完成认证。
 
 安装完成后，重新打开 Codex 会话或刷新 skills 列表。
 
