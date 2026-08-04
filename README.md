@@ -6,11 +6,13 @@
 
 ## 示例预览
 
-以下图片用于测试和展示 skill 的默认浅色主题。界面品牌、人物、业务对象和指标均为模拟内容，不对应真实系统或真实个人。
+以下图片用于测试和展示 skill 的浅色与深色主题。深色样图与浅色样图保持相同的信息架构、业务数据和组件层级，仅切换全局主题。界面品牌、人物、业务对象和指标均为模拟内容，不对应真实系统或真实个人。
 
 ### 经营总览
 
 ![经营总览测试图](examples/operations-overview.png)
+
+![经营总览深色模式测试图](examples/operations-overview-dark.png)
 
 经营总览模板：四项 KPI、月度比较图、环形 KPI、AI 洞察和容量排名。
 
@@ -18,11 +20,15 @@
 
 ![高密度任务队列测试图](examples/review-queue.png)
 
+![高密度任务队列深色模式测试图](examples/review-queue-dark.png)
+
 高密度队列模板：筛选工具条、可扫读表格、语义状态、负荷趋势、处理时间线和 AI 例外建议。
 
 ### 时间调度
 
 ![时间调度测试图](examples/scheduling.png)
+
+![时间调度深色模式测试图](examples/scheduling-dark.png)
 
 时间调度模板：日时间线、资源轨道、月历、汇总指标、可预订时段和冲突提示。
 
@@ -149,8 +155,11 @@ backend-system-generator/
 │   └── calm-admin-tokens.css
 ├── examples/
 │   ├── operations-overview.png
+│   ├── operations-overview-dark.png
 │   ├── review-queue.png
-│   └── scheduling.png
+│   ├── review-queue-dark.png
+│   ├── scheduling.png
+│   └── scheduling-dark.png
 └── references/
     ├── chart-design-system.md
     ├── design-system.md
